@@ -1,6 +1,9 @@
-import Image from "next/image";
 import localFont from "next/font/local";
-import { VideoCard } from '../components/VideoCard'
+import { Appbar } from "@/components/Appbar";
+import { VideoGrid } from "@/components/VideoGrid";
+import { Leftbar } from "@/components/Leftbar";
+import { HorizontalFilter } from "@/components/HorizontalFilter";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -14,15 +17,17 @@ const geistMono = localFont({
 
 export default function Home() {
   return (
-    <div>
-      <VideoCard 
-      title = {"The Naval Podcast - Naval Ravikant with BeerBiceps | TRS"} 
-      thumbnail = {'/thumbnail.png'}
-      profile = {'/dp.png'}
-      author = {"BeerBiceps"}
-      views = {"1.8 M"}
-      timestam = {"2 days ago"}/>
-
+    <div className="flex flex-col h-screen">
+      <Appbar />
+      <div className="flex flex-1 h-full">
+        <Leftbar />
+        <div className="flex flex-col flex-1 min-w-0">
+          <HorizontalFilter />
+          <div className="overflow-y-auto flex-1">
+            <VideoGrid />
+          </div>
+        </div>    
+      </div>
     </div>
   );
 }

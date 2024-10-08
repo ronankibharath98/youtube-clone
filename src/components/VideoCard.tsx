@@ -1,10 +1,12 @@
 export const VideoCard = (props : any) => {
     return (
-        <div>
+        <div className="rounded-xl overflow-hidden">
+            <div>
             <img src={props.thumbnail} />
-            <div className="grid grid-cols-12 pt-2">
+            </div>
+            <div className="grid grid-cols-12 pt-4">
                 <div className="col-span-1">
-                    <img className={"rounded-full w-12 h-12"} src={props.profile} />
+                    <img className={"rounded-full h-auto w-16"} src={props.profile} />
                 </div>
                 <div className="col-span-11 pl-2">
                     <div>
@@ -14,7 +16,7 @@ export const VideoCard = (props : any) => {
                         {props.author}
                     </div>
                     <div className="col-span-11 text-gray-400 text-base">
-                        {props.views} | {props.timestam} 
+                        {props.views} | {props.timestamp} 
                     </div>
                 </div>
             </div>
