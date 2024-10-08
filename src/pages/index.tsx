@@ -17,7 +17,7 @@ const geistMono = localFont({
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="ml-2 mr-2flex flex-col h-screen">
       <Appbar />
       <div className="flex flex-1 h-full">
         <Leftbar />
